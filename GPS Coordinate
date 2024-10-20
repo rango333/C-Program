@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*Objective:Define a user-defined data type, declare variables of that data type,
+and display output of operations using those variables
+*/
+
+/*Define a new data type (struct) that stores the GPS coordinates of a point.
+Specifically, include members for the latitude and longitude and define them as
+type float. Also, Create a typedef struct call Point type betweeen the end curly brace
+and simicolon for the new type to make it easier to declare variables of that.
+*/
+struct GPS {
+	float latitute;
+	float longitute;
+}typedef Point;    //This is the new data type variable
+
+
+
+int main(int argc, char** argv) {
+	/*Declare a variable of your new data type to store the GPS coordinates of UCCS and
+	initialize it using curly brace initialization. UCCS is at latitude 38.8936471 and
+	longitude -104.8003126.
+	*/
+	Point Point1 = { 38.8936471, -104.8003126};
+
+	/*Declare a variable of your new data type to store the GPS coordinates of Garden
+	of the Gods visitor center and initialize it using curly brace initialization.
+	This location is at latitude 38.891811 andlongitude -104.799957.
+	*/
+	Point Point2 = { 38.891811, -104.799957};
+
+	/*Calculate and output the differences in both latitude and longitude between UCCS
+	and garden of the gods visitor center and output the results. Make sure you do the
+	subtraction in the correct order (UCCS - Garden of The Gods).
+	*/
+	printf("Latitude difference: %f\n", Point1.latitute - Point2.latitute);
+	printf("Longitude difference: %f\n", Point1.longitute - Point2.longitute);
+
+	return 0;
+}
