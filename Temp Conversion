@@ -1,0 +1,35 @@
+/*There are several ways to eliminate deprecation warnings for the older,
+less secure functions. The simplest is simply to define _CRT_SECURE_NO_WARNINGS
+or use the warning pragma. Either will disable deprecation warnings,but the
+security issues that caused the warnings still exist. This is shown in line 6.
+*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	/*Objective: Implement basic floating-point calculations and convert
+	between temperatures.
+	*/
+
+	/*Declare float variables for originalFahrenheit, Celsius_temperature, and
+	Fahrenheit_temperature.
+	*/
+	float originalFahrenheit, Celsius_temperature, Fahrenheit_temperature;
+
+	// Prompt user to enter temperature in Fahrenheit.
+	printf("Enter your Fahrenheit value: ");
+	scanf("%f", &originalFahrenheit);
+
+	// Calculate and output the Celcius of the user Fahrenheit input
+	Celsius_temperature = (originalFahrenheit - 32) / 9 * 5;
+	printf_s("_______________________________________________________________\n\n");
+	printf_s("calculated celsius temperature: %lf\n", Celsius_temperature);
+
+	// Calculate and output the Fahrenheit of the Celsius calculation
+	Fahrenheit_temperature = Celsius_temperature * 9 / 5 + 32;
+	printf_s("calculated celsius temperature: %lf\n", Fahrenheit_temperature);
+	printf_s("_______________________________________________________________");
+
+	return 0;
+}
