@@ -1,0 +1,69 @@
+/*
+* File: main.c
+* Max Santomauro
+* Program Assignment 1: Ready, Aim, FIRE!
+* 
+* Assignment Description: Imagine you’re working on developing a game where tanks fire shells
+hoping to destroy the enemy tanks. One of the challenges of the game is that the player has to
+predict where the shell will land after following a parabolic trajectory. Develop a solution that
+will accurately calculate the shell path given a starting shell speed and trajectory (angle of fire).
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <math.h>
+
+#define G 9.81
+#ifndef M_PI
+#define M_PI 3.14159265358979323846f
+#endif
+
+float getFloat();
+
+/*
+* Calculates the maximum height and horizontal distance
+* for a shell given an initial angle and speed
+*/
+int main(int argc, char** argv)
+{
+	// input variables
+	float theta; // initial angle the user inputs
+	float speed;  // initial speed the user inputs
+	float g = 9.81; // acceleration due to gravity
+
+	// get initial angle from user and convert to radians
+	printf("Enter the launch angle (degrees): ");
+	theta = getFloat();
+	float radians = theta * (M_PI / 180);
+	
+	// get initial speed
+	printf("Enter the initial speed (m/s): ");
+	speed = getFloat();
+
+	// calculate initial velocity components
+	float Vox = speed * cos(radians);
+	float Voy = speed * sin(radians);
+
+	// calculate final values
+	float t = Voy / g; // time until shell reaches apex
+	float h = pow(Voy, 2) / (g * 2); // height of shell at apex
+	float dx = Vox * (2 * t); // distance shell travels horizontally
+
+	// print max height and horizontal distance
+	printf("height: %.4f\n", h);
+	printf("horizontal distance: %.4f\n", dx); 
+
+	return (0);
+}
+
+
+// Gets a floating-point number from the user
+
+float getFloat() {
+	float number;
+	scanf("%f", &number);
+	return number;
+}
