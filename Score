@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	printf_s("______________________________\n\n");
+	
+	// Problem 1 – Creat a variable "score" with an int data type and equal it to 34567. Then output it.
+	int score = 34567;
+	printf_s("score: %d\n", score);
+	
+	/* Problem 2 – Create a variable "MAXSCORE" with a constant int data type and equal it to 100000.
+	* Create a variable "percent" with a float datat type and equal it to the percentage "score" is
+	* when compared to the MAXSCORE (make sure to multiply by 100 when divided the score by the MAXSCORE).
+	* Output the result.
+	*/
+	const int MAXSCORE = 100000;
+	float percent = 100 * ((float) score / MAXSCORE);
+	printf("percentage: %.2lf\n", percent);
+
+	// Problem 3 – Output the rounded percentage of the result.
+	printf("rounded percentage: %.0lf\n\n", percent);
+	printf_s("______________________________");
+
+	return 0;
+}
