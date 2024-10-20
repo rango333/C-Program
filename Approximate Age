@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	/*Using the Epoch converter at https://www.epochconverter.com/, we ar 252 days
+	* into 2024
+	*/
+	printf_s("The approximate age of someone born yesterday in 2002 is:\n");
+	int youngAge = ((252 - 1) + 366 * (2024 - 2002)) / 366;
+	printf("%d", youngAge);
+	printf_s(" years old.\n\n");
+	
+	printf_s("The approximate age of someone born yesterday in 1962 is:\n");
+	int oldAge = ((252 - 1) + 366 * (2024 - 1962)) / 366;
+	printf("%d", oldAge);
+	printf_s(" years old.\n\n");
+	printf_s("The age difference between the two is:\n");
+	printf("%d", oldAge - youngAge);
+	printf_s(" years difference.\n");
+	return 0;
+}
