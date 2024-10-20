@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Objective: Practice using the switch statement
+
+int main() {
+	// Initialize a variable called choice with a char data type.
+	char choice;
+
+	// Display a menu
+	printf("**************\n");
+	printf("Menu:\n");
+	printf("N   New Game\n");
+	printf("L   Load Game\n");
+	printf("O   Options\n");
+	printf("Q   Quit\n");
+	printf("**************\n");
+
+	// Prompt the user for a character
+	printf("Enter your choice: ");
+	scanf_s(" %c", &choice);
+
+	
+	// Use switch statement to determine the user's choice
+	switch (choice) {
+		case 'N':
+		case 'n':
+			printf("Starting\n"); break;
+		case 'L':
+		case 'l':
+			printf("Loading\n"); break;
+		case 'O':
+		case 'o':
+			printf("Options"); break;
+		case 'Q':
+		case 'q':
+			printf("Quitting"); break;
+		default:
+			printf("Invalid"); break;
+	}
+	return 0;
+}
