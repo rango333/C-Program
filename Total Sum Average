@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+/* develop a program that takes in as many positive integers (including 0) as
+the user wants to enter and then tells the user how many integers were entered
+and the sum and mean (average) of those numbers.*/
+
+int main() {
+    // Display a welcome message
+    printf("This program calculates the sum and average of positive numbers entered by the user.\n\n");
+
+    // initialize a number, counter, and sum variable
+    int number = 0;
+    int counter = 0;
+    int sum = 0;
+
+    // Create a while loop that updates the counter and the sum
+    while (number >= 0) {
+        // Prompt the user for a number
+        printf("Enter as many integers that's 0 or great as desired and enter\n a negative number when finished\n");
+        scanf_s("%d", &number);
+        if (number >= 0) {
+            // Update counter and sum
+            counter++;
+            sum += number;
+        }
+        else {
+            printf("NO INPUT\n\n");
+        }
+    }
+
+    /* Create an if condition that displays the total number of positive
+    integers entered, the sum, and the calculated average*/
+    if (counter > 0) {
+        double average = (double)sum / counter; // calculate average
+        printf("The total number of positive numbers that were received is: %d\n", counter);
+        printf("The Sum of the numbers is: %d\n", sum);
+        printf("The average (mean) of the numbers is: %.2f\n", average);
+    }
+
+
+    return 0;
+}
