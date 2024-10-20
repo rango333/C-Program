@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+// Objective: Practice using while loops and arrays
+
+int main() {
+
+    int numSize;
+    // Prompt user how many numbers will be inputed
+    printf("Enter the total number of integers (integer greater then 0) that will be entered to find the maximum value: \n");
+    scanf("%d", &numSize);
+
+
+    // Create if/else condition determining if the user picks an integer greater then zero
+    if (numSize < 1) {
+        printf("NO INPUT");
+    }
+    else {
+        //declare an integer array
+        int myArray[numSize];
+
+        //initialize counter variable and max variable and set them to zero
+        int counter = 0;
+        int max = 0;
+
+        //Prompt user for an input of each number chosen and display the choice within a while loop
+        while (counter < numSize) {
+            printf("Enter an integer number: \n");
+            scanf("%d", &myArray[counter]);
+            counter++;
+        }
+        // Determine the largest integer number chosen by the user using a for condition.
+        for (int i; i < numSize; i++) {
+            if (myArray[i] > max) {
+                max = myArray[i];
+            }
+        }
+
+        // Display max integer
+        printf("The maximum value entered by the user is: %d", max);
+    }
+
+    return 0;
+}
