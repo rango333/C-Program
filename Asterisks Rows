@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// Objective: Practice using for loops and nested for loops
+int main() {
+	// Problem 1 – Print even numbers in user-specified range
+	int max_number;
+
+	printf("Enter a number: ");   // Prompt user for input
+	scanf_s("%d", &max_number);
+
+	if (max_number % 2 != 0) {    // If the number is odd, use max_number - 1
+		max_number -= 1;
+	}
+		
+	printf("Even numbers from 0 to %d\n", max_number);    // Print all even numbers from 0 to max_number
+	for (int num = 0; num <= max_number; num += 2) {
+		printf("%d\n", num);
+	}
+
+	// Problem 2 – Print a row of asterisks that’s a user-specified max width
+	int row_width;
+		
+	printf("\nEnter the number of asterisks for a single row: ");	  // Prompt user for row width
+	scanf_s("%d", &row_width);
+
+	printf("Rows of asterisks:\n");   // Print a single row of asterisks
+	for (int i = 0; i < row_width; i++) {
+		printf("*");
+	}
+	printf("\n");
+
+	// Problem 3 – Print rows of asterisks that are a user-specified width
+
+	int num_rows;
+
+	printf("\nEnter the number of rows: ");   // Prompt user for number of rows
+	scanf_s("%d", &num_rows);
+
+	printf("Number of rows:\n");         // Print the number of rows of asterisks
+	for (int i = 0; i < num_rows; i++) {
+		for (int j = 0; j < row_width; j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
