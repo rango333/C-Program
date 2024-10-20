@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main() {
+	// Problem 1 - Display a positive message.
+	
+	int numb1;
+
+	printf("Enter an integer that is equal to or greater then 0: ");   // Prompt user for an integer that equal to 0 or greater.
+	scanf_s("%d", &numb1);
+
+	if (numb1 >= 0) {               // Display result
+		printf("Positive\n\n");
+	}
+	else {
+		printf("invalid integer\n\n");
+	}
+
+	// Problem 2 - Display a positive or negative message.
+
+	int numb2;
+	
+	printf("Enter an integer: ");   // Prompt user for an integer number
+	scanf_s("%d", &numb2);
+
+	if (numb2 >= 0) {               // Display result
+		printf("Positive\n\n");
+	}
+	else {
+		printf("Negative\n\n");
+	}
+
+	//Problem 3 - Respond to the menu choice and display the message.
+
+	char choice = getchar();
+
+	printf("**************\n\n");    // Display menu choice
+	printf("Menu:\n\n");
+	printf("N   New Game\n\n");
+	printf("L   Load Game\n\n");
+	printf("O   Options\n\n");
+	printf("Q   Quit\n\n");
+	printf("**************\n\n");
+
+	printf("Enter your letter choice: ");   // Prompt user for letter choice.
+	scanf_s("%c", &choice);
+
+	if (choice == 'n' || choice == 'N') {           // Display result
+		printf("Starting");
+	} else if (choice == 'l' || choice == 'L') {
+		printf("Loading");
+	} else if (choice == 'o' || choice == 'O') {
+		printf("Options");
+	} else if (choice == 'q' || choice == 'Q') {
+		printf("Quitting");
+	} else {
+		printf("Invalid");
+	}
+	return 0;
+}
