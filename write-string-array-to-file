@@ -1,0 +1,45 @@
+// Student: Max Santomauro
+// Course: CS 1120
+// Instructor: Zanyar Zohourianshahzadi
+
+#include <stdio.h>
+#include <stdlib.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+int main() {
+    // Declare an array of 3 string pointers
+    char* data[3];
+    
+    // Dynamically allocate memory for each string
+    data[0] = "Hello, this is the first line.";
+    data[1] = "This is the second line.";
+    data[2] = "Finally, the third line.";
+    
+    // Complete this part: Declare a file pointer called file from FILE
+    FILE* file;
+    
+    #pragma warning(disable: 4996)  // delete or comment out this line if not using Microsoft Visual Studio
+
+    // complete this part: Open the file for writing: use "output.txt" and inside fopen "w" and assign it to file pointer
+    file = fopen("output.txt", "w");
+
+    #pragma warning(disable: 4996)  // delete or comment out this line if not using Microsoft Visual Studio
+
+    // Check if the file was opened successfully using an if statement to check if file pointer is null, if thats the case print Error opening the file.
+    if (file == NULL) {
+        printf("Error opening the file!\n");
+        return 1;
+    }
+    
+    // Complete this part Write each string in the array to the file using a for loop: with i=0 to i<3 and i++, then inside the loop use fprintf with file pointer, "%s\n" and data[i]
+    for (int i = 0; i < 3; i++) {
+        fprintf(file, "%s\n", data[i]);
+    }
+
+    // Close the file after writing
+    fclose(file);
+
+    // Inform the user
+    printf("Data has been written to 'output.txt'.\n");
+    return 0;  // Program successful
+}
