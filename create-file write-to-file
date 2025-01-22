@@ -1,0 +1,40 @@
+// Student: Max Santomauro
+// Course: CS 1120
+// Instructor: Zanyar Zohourianshahzadi
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Note: Had to use fopen_s using three arguments for opening the file because Visual Studio has issues using fopen
+
+int main() {
+    // Complete this part: Declare a file pointer
+    FILE* file;
+
+    // Declare a string to store user input
+    char data[100];
+    // Ask the user to input data
+    printf("Enter some text to write to a file: ");
+    fgets(data, sizeof(data), stdin);  // Read user input with spaces
+    
+    // Open the file in write mode ("w")
+    // Complete this part: create a new file if it doesn't exist or overwrite if it does: 
+    // use this inside fopen "output.txt", "w" and assign the fopen to file pointer
+    errno_t err = fopen_s(&file, "output.txt", "w");
+    
+    // Complete this part: Check if the file was opened successfully using if statement to check if file pointer is null
+    if (err != 0) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    // Complete this part: Write the user input to the file: use the file pointer, with "%s" and data in fprintf
+    fprintf(file, "%s", data);
+    
+    // Close the file after writing
+    fclose(file);
+    
+    // Inform the user that the data has been written
+    printf("Data has been written to 'output.txt'.\n");
+    return 0;  // Program successful
+}
